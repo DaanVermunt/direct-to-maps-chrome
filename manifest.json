@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "My Chrome Plugin",
+  "version": "1.0",
+  "description": "A simple Chrome plugin example.",
+  "permissions": ["activeTab", "scripting"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Ctrl+B",
+        "mac": "Command+B"
+      }
+    }
+  }
+}
