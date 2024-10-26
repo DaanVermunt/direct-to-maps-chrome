@@ -1,18 +1,18 @@
 {
   "manifest_version": 3,
-  "name": "My Chrome Plugin",
+  "name": "Domain-Specific Command Extension",
   "version": "1.0",
-  "description": "A simple Chrome plugin example.",
+  "description": "This extension enables a command only on specific domains.",
   "permissions": ["activeTab", "scripting"],
-  "action": {
-    "default_popup": "popup.html"
+  "background": {
+    "service_worker": "background.js"
   },
   "commands": {
-    "_execute_action": {
+    "direct-to-maps": {
       "suggested_key": {
-        "default": "Ctrl+B",
-        "mac": "Command+B"
-      }
+        "default": "Ctrl+Shift+Y"
+      },
+      "description": "Run command only on specified domains"
     }
   }
 }
