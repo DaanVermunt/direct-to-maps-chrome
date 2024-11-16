@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Domain-Specific Command Extension",
+  "name": "Quick Maps",
   "version": "1.0",
-  "description": "This extension enables a command only on specific domains.",
+  "description": "Directly open Google Maps from search results with cntrl+shift+Y or the button",
   "permissions": ["activeTab", "scripting"],
   "background": {
     "service_worker": "background.js"
@@ -14,5 +14,17 @@
       },
       "description": "Run command only on specified domains"
     }
-  }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.google.com/search*"],
+      "js": ["content.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["logo-google-maps.svg"],
+      "matches": ["<all_urls>"]
+    }
+  ]
 }
